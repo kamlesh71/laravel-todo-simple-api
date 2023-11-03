@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "43735865-12fb-42cf-a886-ea827a8ff758",
+		"name": "Laravel TODO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10129652",
+		"_collection_link": "https://speeding-meteor-119078.postman.co/workspace/Tourvia~be817b05-1996-4c23-87b4-5887c42a24a0/collection/10129652-43735865-12fb-42cf-a886-ea827a8ff758?action=share&source=collection_link&creator=10129652"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "kamlesh@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "kamlesh@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|9xiCHNg0sGJKACuLEP9QnBP0Bxmjy2RMSu7hWcPre9b9e7e0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Maecenas porta condimentum enim dapibus rhoncus. In eros massa, vestibulum id semper sed, tristique sit amet ipsum. Sed ornare vestibulum gravida. Vestibulum eu quam ornare velit laoreet ultrices vitae sit amet tortor. Aenean vitae tortor id enim egestas imperdiet eu sit amet arcu. Sed hendrerit vel mi non auctor. Pellentesque convallis purus at metus sagittis, sit amet tincidunt sapien aliquam. Sed quis enim laoreet, iaculis sapien et, imperdiet urna. Ut tellus ante, condimentum ut vulputate ut, dapibus at tellus.",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-11-03",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-11-03",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "new",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "medium",
+									"type": "text"
+								},
+								{
+									"key": "notes[0][subject]",
+									"value": "consectetur adipiscing elit",
+									"type": "text"
+								},
+								{
+									"key": "notes[0][note]",
+									"value": "Vestibulum eu quam ornare velit laoreet ultrices vitae sit amet tortor. Aenean vitae tortor id enim egestas imperdiet eu sit amet arcu. Sed hendrerit vel mi non auctor.",
+									"type": "text"
+								},
+								{
+									"key": "notes[0][attachments][]",
+									"type": "file",
+									"src": "/Users/apple/Documents/Kamlesh Suthar - Resume.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tasks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|9xiCHNg0sGJKACuLEP9QnBP0Bxmjy2RMSu7hWcPre9b9e7e0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost/api/v1/task?priority=medium&status=new&due_date=2023-11-03&notes=Vestibulum",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"task"
+							],
+							"query": [
+								{
+									"key": "priority",
+									"value": "medium",
+									"description": "low, medium, high"
+								},
+								{
+									"key": "status",
+									"value": "new",
+									"description": "new, complete, incomplete"
+								},
+								{
+									"key": "due_date",
+									"value": "2023-11-03"
+								},
+								{
+									"key": "notes",
+									"value": "Vestibulum",
+									"description": "lazy search"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
